@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>移入移出-事件</title>
+    <style>
+        *{margin: 0; padding: 0;}
+
+        .goudan{
+            margin: auto;
+
+            width: 200px;
+            height: 50px;
+            background-color: rgb(152,152,152);
+            margin-top: 50px;
+
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="goudan"></div>
+    <div class="goudan"></div>
+
+    <script>
+
+        var oG = document.getElementsByClassName("goudan");
+
+        // 第一个盒子的 移入移出 事件
+        oG[0].onmouseenter = function () {
+            oG[1].innerHTML = "移入了 box1";
+        };
+        oG[0].onmouseleave = function () {
+            oG[1].innerHTML = "";
+        };
+
+        // 第二个盒子 移入移出 事件
+        oG[1].onmouseenter = function () {
+            oG[0].innerHTML = "移入了 box2";
+        }
+        oG[1].onmouseleave = function () {
+            oG[0].innerHTML = "";
+        }
+        
+    </script>
+</body>
+</html>
